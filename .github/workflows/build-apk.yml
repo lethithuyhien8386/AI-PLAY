@@ -11,6 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,23 +20,27 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "17"
 
-      - name: Set up Gradle
+      # Do NOT call chmod ./gradlew here.
+      # This project intentionally builds with the Gradle Action.
+      - name: Set up Gradle 8.13
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.13'
+          gradle-version: "8.13"
 
-      # BƯỚC SỬA LỖI 1: Cấp quyền thực thi cho file gradlew
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      - name: Verify project files
+        run: |
+          pwd
+          test -f settings.gradle.kts
+          test -f app/build.gradle.kts
 
-      # BƯỚC SỬA LỖI 2: Dùng lệnh ./gradlew thay vì lệnh gradle chung chung
       - name: Build debug APK
-        run: ./gradlew :app:assembleDebug --no-daemon
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: AI-Game-Autopilot-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
