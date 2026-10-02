@@ -1,40 +1,28 @@
-# AI Game Autopilot (Android)
+# AI Game Autopilot
 
-Ứng dụng Android thử nghiệm cho game automation bằng AI:
+## GitHub build
 
-**Screenshot → Gemini Vision → JSON action → Accessibility gesture → Screenshot**
+This repository is designed to build directly on GitHub Actions.
 
-### Có sẵn
-- MediaProjection chụp màn hình game.
-- Google AI Studio / Gemini API.
-- Tap, hold, drag/swipe, back, wait, stop.
-- Thanh nổi có thể bấm để bật/tắt; nhấn giữ để dừng service.
-- Lưu API key và mục tiêu trên thiết bị.
-- GitHub Actions build APK debug tự động.
-- Không nhúng API key vào source code.
+**Important:** this version does **not** require `gradlew` and the workflow does **not** run `chmod ./gradlew`.
 
-### Giới hạn
-"Chơi mọi game" không thể đảm bảo. AI phụ thuộc vào hình ảnh, độ trễ mạng, game, FPS, UI và cơ chế anti-cheat. Một số game có thể chặn screen capture hoặc automation.
+1. Upload all files in this ZIP to the root of your GitHub repository.
+2. Open **Actions**.
+3. Select **Build APK**.
+4. Click **Run workflow**.
+5. When finished, download the artifact **AI-Game-Autopilot-debug**.
 
-### Cách dùng
-1. Mở app.
-2. Nhập Google AI Studio API key.
-3. Bật Accessibility cho `AI Game Autopilot`.
-4. Cấp quyền "Display over other apps".
-5. Nhấn `CHẠY AI AUTOPILOT` và chấp nhận quyền screen capture.
-6. Mở game. Thanh nổi hiển thị trạng thái.
-7. Bấm thanh nổi để bật/tắt vòng lặp AI. Nhấn giữ để dừng.
+If your GitHub repository already contains an older `.github/workflows/build-apk.yml`, replace it with the one in this ZIP. Do not keep an old workflow that contains:
 
-### Build bằng GitHub
-Workflow: `.github/workflows/build-apk.yml`
+```bash
+chmod +x gradlew
+./gradlew ...
+```
 
-Sau khi push repo:
-**Actions → Build APK → Run workflow**
+The current workflow installs Gradle 8.13 on the GitHub runner and executes:
 
-APK nằm trong artifact `AI-Game-Autopilot-debug`.
+```bash
+gradle --no-daemon --stacktrace :app:assembleDebug
+```
 
-### Quan trọng về API key
-API key được gửi trực tiếp từ điện thoại tới Gemini API. Không commit key vào GitHub. Google yêu cầu `x-goog-api-key` cho Gemini API.
-
-### Tùy biến
-Model mặc định trong `GeminiClient.kt` là `gemini-3.8-flash`. Có thể đổi sang model Gemini khác mà API key/project của bạn có quyền dùng.
+No API key is stored in the repository. Enter the Google AI Studio API key inside the Android app.
