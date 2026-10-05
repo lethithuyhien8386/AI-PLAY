@@ -1,3 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AI Game Autopilot</string>
+    <string name="app_name">AutoPlay AI</string>
+    <string name="accessibility_desc">AutoPlay AI dùng quyền Trợ năng để tự động chạm, giữ và vuốt màn hình khi chơi game tự động. Không thu thập dữ liệu cá nhân.</string>
+
+    <string name="header_title">AutoPlay AI</string>
+    <string name="header_sub">Bot tự chơi mọi game bằng AI</string>
+
+    <string name="card_api_title">🔑 API Key Google AI Studio</string>
+    <string name="card_api_hint">Dán API key từ aistudio.google.com</string>
+    <string name="card_api_note">Key chỉ lưu trên máy bạn, dùng để gọi Gemini phân tích màn hình game.</string>
+
+    <string name="card_perm_title">⚙️ Quyền cần thiết</string>
+    <string name="perm_a11y">Trợ năng (tự động chạm/vuốt)</string>
+    <string name="perm_overlay">Hiển thị trên ứng dụng khác (thanh nổi)</string>
+    <string name="perm_capture">Quay/chụp màn hình (nhìn game)</string>
+    <string name="btn_grant">Cấp quyền</string>
+    <string name="status_on">Đã bật ✓</string>
+    <string name="status_off">Chưa bật</string>
+
+    <string name="card_cfg_title">🎮 Cấu hình bot</string>
+    <string name="cfg_model">Model Gemini</string>
+    <string name="cfg_interval">Mỗi lần AI phân tích cách nhau:</string>
+    <string name="cfg_interval_val">%1$d giây</string>
+
+    <string name="btn_start">▶  BẮT ĐẦU AUTO PLAY</string>
+    <string name="btn_stop">⏹  DỪNG BOT</string>
+    <string name="bot_running">🟢 Bot đang chạy — mở game bất kỳ để AI tự chơi</string>
+    <string name="bot_stopped">⚪ Bot đang dừng</string>
+
+    <string name="how_title">📖 Cách dùng</string>
+    <string name="how_text">1. Lấy API key miễn phí tại aistudio.google.com → Get API key.\n2. Cấp đủ 3 quyền ở trên.\n3. Nhấn BẮT ĐẦU, cho phép chụp màn hình.\n4. Mở game bất kỳ — thanh nổi 🎮 xuất hiện, nhấn ▶ để AI tự chơi, ⏸ để tạm dừng.\n5. Kéo thanh nổi để di chuyển, nhấn để mở/đóng bảng điều khiển.</string>
+
+    <string name="warn_title">⚠️ Lưu ý</string>
+    <string name="warn_text">• Một số game chặn chụp màn hình (màn hình đen) — bot sẽ báo và không hoạt động được với game đó.\n• Mỗi lần phân tích tốn 1 lượt gọi API — chỉnh khoảng cách phân tích dài hơn để tiết kiệm.\n• Không dùng bot để gian lận trong game online có tính cạnh tranh, tài khoản có thể bị khóa.</string>
+
+    <string name="err_no_key">Vui lòng nhập API key trước!</string>
+    <string name="err_no_a11y">Bạn cần bật quyền Trợ năng cho AutoPlay AI!</string>
+    <string name="err_no_overlay">Bạn cần cấp quyền \"Hiển thị trên ứng dụng khác\"!</string>
+
+    <string name="float_status_idle">Sẵn sàng — nhấn ▶ để AI bắt đầu chơi</string>
+    <string name="float_btn_toggle">Tạm dừng</string>
+    <string name="float_btn_now">Phân tích ngay</string>
+    <string name="float_btn_stop">Dừng &amp; thoát</string>
+
+    <string name="notif_title">AutoPlay AI đang chạy</string>
+    <string name="notif_text">Nhấn để mở app • Dùng thanh nổi để điều khiển bot</string>
+    <string name="notif_stop">Dừng bot</string>
+    <string name="notif_channel">Bot chơi game</string>
 </resources>

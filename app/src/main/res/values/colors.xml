@@ -1,7 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg">#0B1020</color>
-    <color name="card">#151D33</color>
-    <color name="accent">#7C5CFC</color>
-    <color name="text">#F5F7FF</color>
-    <color name="muted">#A8B0C5</color>
+    <color name="bg">#0B0E1A</color>
+    <color name="bg_card">#151A2E</color>
+    <color name="bg_card2">#1C2340</color>
+    <color name="neon_cyan">#00E5FF</color>
+    <color name="neon_purple">#9D4EDD</color>
+    <color name="neon_pink">#FF4D8D</color>
+    <color name="neon_green">#00E676</color>
+    <color name="neon_yellow">#FFD54F</color>
+    <color name="neon_red">#FF5252</color>
+    <color name="text_main">#F2F4FF</color>
+    <color name="text_dim">#9AA3C7</color>
+    <color name="divider">#262D4D</color>
 </resources>
